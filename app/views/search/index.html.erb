@@ -1,8 +1,9 @@
-
+<div class="container">
 <% @stations.each do |station| %>
-  Station name:<%= station[:station_name] %><br>
-  Station address:<%= station[:street_address] %><br>
-  Station fuel type:<%= station[:fuel_type_code] %><br>
-  Station distance:<%= station[:distance] %><br>
+  <strong>Station name:</strong> <%= station[:station_name] %><br>
+  Station address: <%= station[:street_address] %> <%= station[:city] %>, <%= station[:state] %> <%= station[:zip] %><br>
+  Station fuel type: <%= station[:fuel_type_code] %><br>
+  Station distance: <%= station[:distance].round(2) %> miles<br>
   Station access times: <%= station[:access_days_time] %><br><br>
 <% end %>
+</div>
