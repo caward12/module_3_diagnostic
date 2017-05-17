@@ -7,10 +7,10 @@ describe 'nrel service' do
         key = ENV['NREL_KEY']
         location = '80203'
         stations = NrelService.new(key).find_stations(location)
-
+  
         expect(stations).to be_an(Array)
         expect(stations.first).to be_a(Hash)
-        expect(stations.first).to have_key([:station_name])
+        expect(stations.first).to have_key(:station_name)
       end
     end
   end

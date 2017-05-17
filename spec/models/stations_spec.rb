@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "stations" do
   context "create stations" do
-    xit "creates stations from raw data" do
+    it "creates stations from raw data" do
       VCR.use_cassette("stations") do
         key = ENV['NREL_KEY']
         location = '80203'
