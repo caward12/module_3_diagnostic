@@ -9,6 +9,12 @@ require 'capybara'
 require 'database_cleaner'
 require 'launchy'
 
+VCR.configure do |config|
+  config.cassette_library_dir = "fixtures/vcr_cassettes"
+  config.hook_into :webmock
+  config.filter_sensitive_data('<NREL_KEY>') { ENV['NREL_KEY'] }
+end
+
 DatabaseCleaner.strategy = :truncation
 
 RSpec.configure do |c|
